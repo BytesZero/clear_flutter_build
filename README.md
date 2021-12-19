@@ -1,5 +1,6 @@
-A sample command-line application with an entrypoint in `bin/`, library code
-in `lib/`, and example unit test in `test/`.
+## cf
 
-Created from templates made available by Stagehand under a BSD-style
-[license](https://github.com/dart-lang/stagehand/blob/master/LICENSE).
+批量清理 Flutter 项目 [build、ios/Pods] 目录，优化电脑空间，顺手练习一下 Dart CLI
+
+## 运行截图
+

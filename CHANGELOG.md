@@ -1,3 +1,6 @@
 ## 1.0.0
 
-- Initial version, created by Stagehand
+- 完成第一个版本
+- 支持清理 build 目录
+- 支持清理 ios/Pods 目录
+- 支持帮助说明查看
