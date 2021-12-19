@@ -1,0 +1,65 @@
+// ignore_for_file: avoid_print
+
+import 'dart:io';
+
+/// cli 版本号
+const String kCliVersion = '1.0.0';
+
+/// 清理全部
+Future<void> flutterCleanAll() async {
+  await forEachFlutterDir(Directory.current.path);
+  print('🎉 全部清理完毕');
+}
+
+/// 遍历 Flutter dir
+Future<void> forEachFlutterDir(String path) async {
+  // 不是文件夹退出
+  if (!await FileSystemEntity.isDirectory(path)) {
+    return;
+  }
+  // 隐藏文件退出
+  if (path.split(Platform.pathSeparator).last.startsWith('.')) {
+    print('🙈 隐藏文件夹跳过');
+    return;
+  }
+  // 开始遍历
+  var fileList = Directory(path).listSync(followLinks: false);
+  var fileNameList =
+      fileList.map((e) => e.path.split(Platform.pathSeparator).last).toList();
+  // 检查 Flutter 目录
+  if (fileNameList.contains('pubspec.yaml')) {
+    // 清理 build
+    if (fileNameList.contains('build')) {
+      await runClean(path);
+    }
+    // 清理 Pods
+    if (Directory('$path/ios/Pods').existsSync()) {
+      await runPodsClean(path);
+    }
+  } else {
+    // print('没有 Flutter 目录，继续遍历:$path');
+    for (var file in fileList) {
+      forEachFlutterDir(file.path);
+    }
+  }
+}
+
+// 执行 Flutter 清理
+Future<void> runClean(String dirPath) async {
+  print('🗑️ 正在 clean：$dirPath');
+  var result =
+      await Process.run('flutter', ['clean'], workingDirectory: dirPath);
+  print(result.stdout);
+  // 延迟 50 毫秒
+  await Future.delayed(const Duration(milliseconds: 50));
+}
+
+// 执行 Pods 清理
+Future<void> runPodsClean(String dirPath) async {
+  print('🧹 正在 Pods clean：$dirPath');
+  var result =
+      await Process.run('rm', ['-rf', 'ios/Pods'], workingDirectory: dirPath);
+  print(result.stdout);
+  // 延迟 50 毫秒
+  await Future.delayed(const Duration(milliseconds: 50));
+}
