@@ -3,16 +3,37 @@
 import 'dart:io';
 
 /// cli 版本号
-const String kCliVersion = '1.0.0';
+const String kCliVersion = '1.0.1';
 
 /// 清理全部
 Future<void> flutterCleanAll() async {
+  await forEachFlutterDir(
+    Directory.current.path,
+    clearBuild: true,
+    clearPods: true,
+  );
+  print('🎉 全部清理完毕');
+}
+
+/// 清理 build
+Future<void> flutterCleanBuild() async {
   await forEachFlutterDir(Directory.current.path);
   print('🎉 全部清理完毕');
 }
 
+/// 清理 Pods
+Future<void> flutterCleanPods() async {
+  await forEachFlutterDir(
+    Directory.current.path,
+    clearBuild: false,
+    clearPods: true,
+  );
+  print('🎉 全部清理完毕');
+}
+
 /// 遍历 Flutter dir
-Future<void> forEachFlutterDir(String path) async {
+Future<void> forEachFlutterDir(String path,
+    {bool clearBuild = true, bool clearPods = false}) async {
   // 不是文件夹退出
   if (!await FileSystemEntity.isDirectory(path)) {
     return;
@@ -29,11 +50,11 @@ Future<void> forEachFlutterDir(String path) async {
   // 检查 Flutter 目录
   if (fileNameList.contains('pubspec.yaml')) {
     // 清理 build
-    if (fileNameList.contains('build')) {
+    if (clearBuild && fileNameList.contains('build')) {
       await runClean(path);
     }
     // 清理 Pods
-    if (Directory('$path/ios/Pods').existsSync()) {
+    if (clearPods && Directory('$path/ios/Pods').existsSync()) {
       await runPodsClean(path);
     }
   } else {

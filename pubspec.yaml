@@ -1,6 +1,6 @@
 name: cf
 description: 清理 Flutter 项目缓存，释放空间
-# version: 1.0.0 在 lib/cf.dart kCliVersion 设置版本
+version: 1.0.1 #在 lib/cf.dart kCliVersion 设置版本
 homepage: https://github.com/yy1300326388
 
 environment:

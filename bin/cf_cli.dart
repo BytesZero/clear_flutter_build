@@ -55,7 +55,16 @@ void main(List<String> arguments) {
     } else {
       // 输出清理模式
       print('🚀 清理模式:$mode');
-      flutterCleanAll();
+      switch (mode) {
+        case 'all':
+          flutterCleanAll();
+          break;
+        case 'pods':
+          flutterCleanPods();
+          break;
+        default:
+          flutterCleanBuild();
+      }
     }
   }
 }
