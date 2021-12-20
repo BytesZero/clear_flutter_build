@@ -3,7 +3,7 @@
 import 'dart:io';
 
 /// cli 版本号
-const String kCliVersion = '1.0.1';
+const String kCliVersion = '1.1.0';
 
 /// 清理全部
 Future<void> flutterCleanAll() async {

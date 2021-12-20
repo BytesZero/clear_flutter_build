@@ -2,6 +2,21 @@
 
 批量清理 Flutter 项目 [build、ios/Pods] 目录，优化电脑空间，顺手练习一下 Dart CLI
 
+## 安装
+
+- 方法一
+
+```
+dart pub global activate cf_cli
+```
+
+- 方法二
+
+```
+dart pub global activate -sgit https://github.com/yy1300326388/clear_flutter_build.git
+```
+
+
 ## 运行效果
 
 - 清理 `build` 
@@ -61,7 +76,3 @@
 -v, --[no-]version    📦️ 获取版本
 -h, --[no-]help       💡 帮助说明
 ```
-
-
-
-

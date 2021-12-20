@@ -3,7 +3,7 @@
 import 'dart:io';
 
 import 'package:args/args.dart';
-import 'package:cf/cf.dart';
+import 'package:cf_cli/cf.dart';
 
 void main(List<String> arguments) {
   var parser = ArgParser();
