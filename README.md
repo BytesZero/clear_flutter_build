@@ -2,6 +2,7 @@
 |-------|-------|
 
 ## cf（Clean Flutter）
+![](https://img.shields.io/pub/v/cf_cli?logo=Dart&logoColor=FFFFFF)
 
 Clean up the [`build`, `ios/Pods`] directory of Flutter projects in batches, optimize computer space, and practice Dart CLI
 
