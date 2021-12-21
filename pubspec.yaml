@@ -1,6 +1,6 @@
-name: cf
-description: 清理 Flutter 项目缓存，释放空间
-# version: 1.0.0 在 lib/cf.dart kCliVersion 设置版本
+name: cf_cli
+description: Clean up the [build, ios/Pods] directory of Flutter projects in batches, optimize computer space
+version: 1.1.0 #在 lib/cf.dart kCliVersion 设置版本
 homepage: https://github.com/yy1300326388
 
 environment:
@@ -12,3 +12,6 @@ dependencies:
 dev_dependencies:
   flutter_lints: ^1.0.4
   test: ^1.20.0
+
+executables:
+  cf: main
