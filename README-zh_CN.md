@@ -1,6 +1,9 @@
+| [English](README.md) | 简体中文 |
+|-------|-------|
+
 ## cf
 
-批量清理 Flutter 项目 [build、ios/Pods] 目录，优化电脑空间，顺手练习一下 Dart CLI
+批量清理 Flutter 项目 [`build`、`ios/Pods`] 目录，优化电脑空间，顺手练习一下 Dart CLI
 
 ## 安装
 
@@ -61,3 +64,18 @@ dart pub global activate -sgit https://github.com/yy1300326388/clear_flutter_bui
 -v, --[no-]version    📦️ 获取版本
 -h, --[no-]help       💡 帮助说明
 ```
+
+
+## 我的清理结果
+
+|清理前|清理后|
+|--|--|
+|![](https://user-images.githubusercontent.com/8764899/146867779-b0e86b0a-6e7f-473a-b4e1-d69fbfd5bc3c.png)|![](https://user-images.githubusercontent.com/8764899/146867789-b5284afa-c016-4727-a0a9-723ee3616c8f.png)|
+
+> CleanMyMac can’t save me, so I wrote the cf_cli tool
+
+## ☕请我喝咖啡
+
+<a href="https://raw.githubusercontent.com/yy1300326388/yy1300326388/main/images/pay_qr_code/pay_qr_code.png">
+    <img width="300" alt="coffee" src="https://raw.githubusercontent.com/yy1300326388/yy1300326388/main/images/pay_qr_code/pay_qr_code.png">
+</a>
