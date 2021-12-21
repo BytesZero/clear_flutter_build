@@ -12,13 +12,13 @@ Future<void> flutterCleanAll() async {
     clearBuild: true,
     clearPods: true,
   );
-  print('🎉 全部清理完毕');
+  print('🎉 All cleaned up');
 }
 
 /// 清理 build
 Future<void> flutterCleanBuild() async {
   await forEachFlutterDir(Directory.current.path);
-  print('🎉 全部清理完毕');
+  print('🎉 All cleaned up');
 }
 
 /// 清理 Pods
@@ -28,7 +28,7 @@ Future<void> flutterCleanPods() async {
     clearBuild: false,
     clearPods: true,
   );
-  print('🎉 全部清理完毕');
+  print('🎉 All cleaned up');
 }
 
 /// 遍历 Flutter dir
@@ -40,7 +40,7 @@ Future<void> forEachFlutterDir(String path,
   }
   // 隐藏文件退出
   if (path.split(Platform.pathSeparator).last.startsWith('.')) {
-    print('🙈 隐藏文件夹跳过');
+    print('🙈 Hidden folder skip');
     return;
   }
   // 开始遍历
@@ -65,9 +65,9 @@ Future<void> forEachFlutterDir(String path,
   }
 }
 
-// 执行 Flutter 清理
+// 执行 Flutter build 清理
 Future<void> runClean(String dirPath) async {
-  print('🗑️ 正在 clean：$dirPath');
+  print('🗑️ Cleaning up：$dirPath');
   var result =
       await Process.run('flutter', ['clean'], workingDirectory: dirPath);
   print(result.stdout);
@@ -77,7 +77,7 @@ Future<void> runClean(String dirPath) async {
 
 // 执行 Pods 清理
 Future<void> runPodsClean(String dirPath) async {
-  print('🧹 正在 Pods clean：$dirPath');
+  print('🧹 Cleaning up Pods：$dirPath');
   var result =
       await Process.run('rm', ['-rf', 'ios/Pods'], workingDirectory: dirPath);
   print(result.stdout);

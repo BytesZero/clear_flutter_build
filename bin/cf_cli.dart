@@ -14,14 +14,15 @@ void main(List<String> arguments) {
     abbr: 'm',
     defaultsTo: 'build',
     allowed: ['build', 'pods', 'all'],
-    help: '🚀 设置清理模式 build 是 build 文件夹，pods 是 ios/Pods 文件夹, all 全部文件夹',
+    help:
+        '🚀 Set the cleanup mode build is the build folder, pods is the ios/Pods folder, all folders',
   );
 
   // 添加 version
   parser.addFlag(
     'version',
     abbr: 'v',
-    help: '📦️ 获取版本',
+    help: '📦️ Get the version',
     defaultsTo: false,
   );
 
@@ -29,7 +30,7 @@ void main(List<String> arguments) {
   parser.addFlag(
     'help',
     abbr: 'h',
-    help: '💡 帮助说明',
+    help: '💡 Help description',
     defaultsTo: false,
   );
   late String mode;
@@ -54,7 +55,7 @@ void main(List<String> arguments) {
           '\n🧑‍💻 OS：${Platform.operatingSystemVersion}');
     } else {
       // 输出清理模式
-      print('🚀 清理模式:$mode');
+      print('🚀 Cleanup mode:$mode');
       switch (mode) {
         case 'all':
           flutterCleanAll();
