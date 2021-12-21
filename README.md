@@ -1,3 +1,6 @@
+| English | [简体中文](README-zh_CN.md) |
+|-------|-------|
+
 ## cf（Clean Flutter）
 
 Clean up the [`build`, `ios/Pods`] directory of Flutter projects in batches, optimize computer space, and practice Dart CLI
@@ -74,4 +77,4 @@ dart pub global activate -sgit https://github.com/yy1300326388/clear_flutter_bui
 
 <a href="https://raw.githubusercontent.com/yy1300326388/yy1300326388/main/images/pay_qr_code/pay_qr_code.png">
     <img width="300" alt="coffee" src="https://raw.githubusercontent.com/yy1300326388/yy1300326388/main/images/pay_qr_code/pay_qr_code.png">
-  </a>
+</a>
