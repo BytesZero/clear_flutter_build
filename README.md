@@ -1,6 +1,6 @@
-## cf（Clean Flutter Cache）
+## cf（Clean Flutter）
 
-Clean up the [build, ios/Pods] directory of Flutter projects in batches, optimize computer space, and practice Dart CLI
+Clean up the [`build`, `ios/Pods`] directory of Flutter projects in batches, optimize computer space, and practice Dart CLI
 
 ## Install
 
@@ -64,3 +64,14 @@ dart pub global activate -sgit https://github.com/yy1300326388/clear_flutter_bui
 
 ## My cleanup results
 
+|Before|After|
+|--|--|
+|![](https://user-images.githubusercontent.com/8764899/146867779-b0e86b0a-6e7f-473a-b4e1-d69fbfd5bc3c.png)|![](https://user-images.githubusercontent.com/8764899/146867789-b5284afa-c016-4727-a0a9-723ee3616c8f.png)|
+
+> CleanMyMac can’t save me, so I wrote the cf_cli tool
+
+## Buy me coffee
+
+<a href="https://raw.githubusercontent.com/yy1300326388/yy1300326388/main/images/pay_qr_code/pay_qr_code.png">
+    <img width="300" alt="coffee" src="https://raw.githubusercontent.com/yy1300326388/yy1300326388/main/images/pay_qr_code/pay_qr_code.png">
+  </a>
