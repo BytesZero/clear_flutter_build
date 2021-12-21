@@ -1,67 +1,80 @@
-## cf
+| English | [简体中文](README-zh_CN.md) |
+|-------|-------|
 
-批量清理 Flutter 项目 [build、ios/Pods] 目录，优化电脑空间，顺手练习一下 Dart CLI
+## cf（Clean Flutter）
 
-## 运行效果
+Clean up the [`build`, `ios/Pods`] directory of Flutter projects in batches, optimize computer space, and practice Dart CLI
 
-- 清理 `build` 
+## Install
+
+- Dart activate
+
+```
+dart pub global activate cf_cli
+```
+
+- Git source
+
+```
+dart pub global activate -sgit https://github.com/yy1300326388/clear_flutter_build.git
+```
+
+
+## Run cleanup
+
+- Cleanup `build` 
 
 ```
 ➜  cf
-🚀 清理模式:build
-🎉 全部清理完毕
-🙈 隐藏文件夹跳过
-🙈 隐藏文件夹跳过
-🙈 隐藏文件夹跳过
-🙈 隐藏文件夹跳过
-🙈 隐藏文件夹跳过
+🚀 Cleanup mode:build
+🎉 All cleaned up
 ```
 
-- 清理 `ios/Pods`
+- Cleanup `ios/Pods`
 
 ```
 ➜  cf -m pods
-🚀 清理模式:pods
-🎉 全部清理完毕
-🙈 隐藏文件夹跳过
-🙈 隐藏文件夹跳过
-🙈 隐藏文件夹跳过
-🙈 隐藏文件夹跳过
-🙈 隐藏文件夹跳过
+🚀 Cleanup mode:pods
+🎉 All cleaned up
 ```
 
-- 清理 `build` 和 `ios/Pods`
+- Cleanup `build` 和 `ios/Pods`
 
 ```
 ➜  cf -m all
-🚀 清理模式:all
-🎉 全部清理完毕
-🙈 隐藏文件夹跳过
-🙈 隐藏文件夹跳过
-🙈 隐藏文件夹跳过
-🙈 隐藏文件夹跳过
-🙈 隐藏文件夹跳过
+🚀 Cleanup mode:all
+🎉 All cleaned up
 ```
 
-- 版本信息
+- Get the version
 
 ```
 ➜  cf -v
-🚀 CF Version：1.0.0
-🐦 Dart：2.14.4 (stable) (Wed Oct 13 11:11:32 2021 +0200) on "macos_x64"
-🧑‍💻 OS：10.16
+🚀 CF Version：1.1.0
+🐦 Dart：2.15.0 (stable) (Fri Dec 3 14:23:23 2021 +0100) on "macos_x64"
+🧑‍💻 OS：Version 12.0.1 (Build 21A559)
 ```
 
-- 帮助说明
+- Help description
 
 ```
 ➜  cf -h
--m, --mode            🚀 设置清理模式 build 是 build 文件夹，pods 是 ios/Pods 文件夹, all 全部文件夹
+-m, --mode            🚀 Set the cleanup mode build is the build folder, pods is the ios/Pods folder, all folders
                       [build (default), pods, all]
--v, --[no-]version    📦️ 获取版本
--h, --[no-]help       💡 帮助说明
+-v, --[no-]version    📦️ Get the version
+-h, --[no-]help       💡 Help description
 ```
 
+## My cleanup results
 
+|Before|After|
+|--|--|
+|![](https://user-images.githubusercontent.com/8764899/146867779-b0e86b0a-6e7f-473a-b4e1-d69fbfd5bc3c.png)|![](https://user-images.githubusercontent.com/8764899/146867789-b5284afa-c016-4727-a0a9-723ee3616c8f.png)|
 
+> `CleanMyMac` can’t save me, so I wrote the cf_cli tool
 
+## Buy me coffee
+
+<a href="https://raw.githubusercontent.com/yy1300326388/yy1300326388/main/images/pay_qr_code/pay_qr_code.png">
+    <img width="300" alt="coffee" src="https://raw.githubusercontent.com/yy1300326388/yy1300326388/main/images/pay_qr_code/pay_qr_code.png">
+</a>
