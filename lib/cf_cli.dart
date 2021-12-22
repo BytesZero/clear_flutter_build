@@ -68,7 +68,7 @@ Future<void> forEachFlutterDir(String path,
   }
   // 隐藏文件退出
   if (path.split(Platform.pathSeparator).last.startsWith('.')) {
-    print('🙈 Hidden folder skip');
+    // print('🙈 Hidden folder skip');
     return;
   }
   // 开始遍历
@@ -108,7 +108,7 @@ Future<void> forEachFlutterDir(String path,
   } else {
     // 没有 Flutter 目录，继续遍历:$path
     for (var file in fileList) {
-      forEachFlutterDir(
+      await forEachFlutterDir(
         file.path,
         clearBuild: clearBuild,
         clearPods: clearPods,
