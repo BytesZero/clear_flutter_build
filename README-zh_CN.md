@@ -1,4 +1,4 @@
-| [English](README.md) | 简体中文 |
+| [English](https://github.com/yy1300326388/clear_flutter_build) | 简体中文 |
 |-------|-------|
 
 ## cf

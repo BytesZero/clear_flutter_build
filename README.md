@@ -1,7 +1,8 @@
-| English | [简体中文](README-zh_CN.md) |
+| English | [简体中文](https://github.com/yy1300326388/clear_flutter_build/README-zh_CN.md) |
 |-------|-------|
 
 ## cf（Clean Flutter）
+![](https://img.shields.io/pub/v/cf_cli?logo=Dart&logoColor=FFFFFF)
 
 ![](https://img.shields.io/pub/v/cf_cli?logo=Dart&logoColor=FFFFFF)
 

@@ -1,11 +1,20 @@
+| English | [简体中文](https://github.com/yy1300326388/clear_flutter_build/CHANGELOG-zh_CN.md) |
+|-------|-------|
+
+## 1.2.0
+
+- Optimize the display of the full path of the cleanup folder
+- Optimize the handling of `package/example`
+- Added cleaning of `android/.gradle` folder, use `cf - m gradle`
+
 ## 1.1.0
 
-- 优化 mode 的执行
-- 支持 pub 安装
+- Optimize the execution of mode
+- Support pub installation
 
 ## 1.0.0
 
-- 完成第一个版本
-- 支持清理 build 目录
-- 支持清理 ios/Pods 目录
-- 支持帮助说明查看
+- Complete the first version
+- Support cleaning up the `build` directory
+- Support cleaning up the `ios/Pods` directory
+- Support help description view

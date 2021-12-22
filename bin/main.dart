@@ -13,9 +13,9 @@ void main(List<String> arguments) {
     'mode',
     abbr: 'm',
     defaultsTo: 'build',
-    allowed: ['build', 'pods', 'all'],
+    allowed: ['build', 'pods', 'gradle', 'all'],
     help:
-        '🚀 Set the cleanup mode build is the build folder, pods is the ios/Pods folder, all folders',
+        '🚀 Set the cleanup mode build is the build folder, pods is the ios/Pods folder, gradle is the android/.gradle folder, all folders',
   );
 
   // 添加 version
@@ -62,6 +62,9 @@ void main(List<String> arguments) {
           break;
         case 'pods':
           flutterCleanPods();
+          break;
+        case 'gradle':
+          flutterCleanGradle();
           break;
         default:
           flutterCleanBuild();
