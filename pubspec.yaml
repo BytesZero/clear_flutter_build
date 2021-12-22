@@ -1,7 +1,7 @@
 name: cf_cli
 description: Clean up the [build, ios/Pods] directory of Flutter projects in batches, optimize computer space
 version: 1.2.0 #在 lib/cf.dart kCliVersion 设置版本
-homepage: https://github.com/yy1300326388
+homepage: https://github.com/yy1300326388/clear_flutter_build
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
