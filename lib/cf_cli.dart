@@ -3,19 +3,17 @@
 import 'dart:io';
 
 /// cli 版本号
-const String kCliVersion = '1.2.0';
-
+const String kCliVersion = '1.3.0';
 // pubspec.yaml
 const String kPubspecYaml = 'pubspec.yaml';
 // example
 const String kExampleDir = 'example';
-
 // build
 const String kBuildDir = 'build';
-
+// .dart_tool
+const String kDartToolDir = '.dart_tool';
 // ios/Pods
 const String kIosPodsDir = 'ios/Pods';
-
 // android/.gradle
 const String kAndroidDir = 'android/.gradle';
 
@@ -32,28 +30,19 @@ Future<void> flutterCleanAll() async {
 
 /// 清理 build
 Future<void> flutterCleanBuild() async {
-  await forEachFlutterDir(Directory.current.path);
+  await forEachFlutterDir(Directory.current.path, clearBuild: true);
   print('🎉 All cleaned up');
 }
 
 /// 清理 Pods
 Future<void> flutterCleanPods() async {
-  await forEachFlutterDir(
-    Directory.current.path,
-    clearBuild: false,
-    clearPods: true,
-  );
+  await forEachFlutterDir(Directory.current.path, clearPods: true);
   print('🎉 All cleaned up');
 }
 
 /// 清理 gradle
 Future<void> flutterCleanGradle() async {
-  await forEachFlutterDir(
-    Directory.current.path,
-    clearBuild: false,
-    clearPods: false,
-    clearGradle: true,
-  );
+  await forEachFlutterDir(Directory.current.path, clearGradle: true);
   print('🎉 All cleaned up');
 }
 
@@ -67,7 +56,8 @@ Future<void> forEachFlutterDir(String path,
     return;
   }
   // 隐藏文件退出
-  if (path.split(Platform.pathSeparator).last.startsWith('.')) {
+  if (!path.startsWith(kDartToolDir) &&
+      path.split(Platform.pathSeparator).last.startsWith('.')) {
     // print('🙈 Hidden folder skip');
     return;
   }
@@ -87,13 +77,15 @@ Future<void> forEachFlutterDir(String path,
           clearPods: clearPods,
           clearGradle: clearGradle,
         );
-        return;
       }
     }
     // 清理 build
-    if (clearBuild && fileNameList.contains(kBuildDir)) {
+    if (clearBuild &&
+        (fileNameList.contains(kBuildDir) ||
+            fileNameList.contains(kDartToolDir))) {
       await runClean(path);
     }
+
     // 清理 Pods
     if (clearPods &&
         Directory('$path${Platform.pathSeparator}$kIosPodsDir').existsSync()) {
@@ -120,7 +112,7 @@ Future<void> forEachFlutterDir(String path,
 
 // 执行 Flutter build 清理
 Future<void> runClean(String dirPath) async {
-  print('🗑️ Cleaning up：$dirPath');
+  print('🧹 Cleaning up：$dirPath');
   var result =
       await Process.run('flutter', ['clean'], workingDirectory: dirPath);
   print(result.stdout);

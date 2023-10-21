@@ -1,6 +1,11 @@
 | [English](https://github.com/yy1300326388/clear_flutter_build/CHANGELOG.md) | 简体中文 |
 |-------|-------|
 
+## 1.3.0
+
+- 优化图标显示问题
+- 默认改为 `all` 模式
+
 ## 1.2.0
 
 - 优化显示清理文件夹全路径

@@ -12,7 +12,7 @@ void main(List<String> arguments) {
   parser.addOption(
     'mode',
     abbr: 'm',
-    defaultsTo: 'build',
+    defaultsTo: 'all',
     allowed: ['build', 'pods', 'gradle', 'all'],
     help:
         '🚀 Set the cleanup mode build is the build folder, pods is the ios/Pods folder, gradle is the android/.gradle folder, all folders',
@@ -52,13 +52,13 @@ void main(List<String> arguments) {
     if (version) {
       print('🚀 CF Version：$kCliVersion'
           '\n🐦 Dart：${Platform.version}'
-          '\n🧑‍💻 OS：${Platform.operatingSystemVersion}');
+          '\n💻 OS：${Platform.operatingSystemVersion}');
     } else {
       // 输出清理模式
       print('🚀 Cleanup mode:$mode');
       switch (mode) {
-        case 'all':
-          flutterCleanAll();
+        case 'build':
+          flutterCleanBuild();
           break;
         case 'pods':
           flutterCleanPods();
@@ -67,7 +67,7 @@ void main(List<String> arguments) {
           flutterCleanGradle();
           break;
         default:
-          flutterCleanBuild();
+          flutterCleanAll();
       }
     }
   }

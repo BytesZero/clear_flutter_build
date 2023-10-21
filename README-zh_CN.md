@@ -5,7 +5,7 @@
 
 批量清理 Flutter 项目 [`build`、`ios/Pods`] 目录，优化电脑空间，顺手练习一下 Dart CLI
 
-## 安装
+## 安装&更新
 
 - 方法一
 
@@ -52,7 +52,7 @@ dart pub global activate -sgit https://github.com/yy1300326388/clear_flutter_bui
 ➜  cf -v
 🚀 CF Version：1.0.0
 🐦 Dart：2.14.4 (stable) (Wed Oct 13 11:11:32 2021 +0200) on "macos_x64"
-🧑‍💻 OS：10.16
+💻 OS：10.16
 ```
 
 - 帮助说明

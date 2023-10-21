@@ -6,7 +6,7 @@
 
 Clean up the [`build`, `ios/Pods`] directory of Flutter projects in batches, optimize computer space, and practice Dart CLI
 
-## Install
+## Install & Update
 
 - Dart activate
 
@@ -53,7 +53,7 @@ dart pub global activate -sgit https://github.com/yy1300326388/clear_flutter_bui
 ➜  cf -v
 🚀 CF Version：1.1.0
 🐦 Dart：2.15.0 (stable) (Fri Dec 3 14:23:23 2021 +0100) on "macos_x64"
-🧑‍💻 OS：Version 12.0.1 (Build 21A559)
+💻 OS：Version 12.0.1 (Build 21A559)
 ```
 
 - Help description
